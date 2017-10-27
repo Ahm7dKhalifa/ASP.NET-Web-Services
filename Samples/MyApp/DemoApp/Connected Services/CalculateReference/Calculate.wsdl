@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Add">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddXMLResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddXMLWithParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="y" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddXMLWithParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddXMLWithParametersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddXMLWithParameters2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="y" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddXMLWithParameters2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddXMLWithParameters2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWithJSON">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddWithJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddWithJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWithJSONWithParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="y" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWithJSONWithParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddWithJSONWithParametersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:AddXML" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:AddXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLWithParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:AddXMLWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLWithParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:AddXMLWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLWithParameters2SoapIn">
+    <wsdl:part name="parameters" element="tns:AddXMLWithParameters2" />
+  </wsdl:message>
+  <wsdl:message name="AddXMLWithParameters2SoapOut">
+    <wsdl:part name="parameters" element="tns:AddXMLWithParameters2Response" />
+  </wsdl:message>
+  <wsdl:message name="AddWithJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:AddWithJSON" />
+  </wsdl:message>
+  <wsdl:message name="AddWithJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:AddWithJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddWithJSONWithParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:AddWithJSONWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="AddWithJSONWithParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:AddWithJSONWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculateSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddXML">
+      <wsdl:input message="tns:AddXMLSoapIn" />
+      <wsdl:output message="tns:AddXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters">
+      <wsdl:input message="tns:AddXMLWithParametersSoapIn" />
+      <wsdl:output message="tns:AddXMLWithParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters2">
+      <wsdl:input message="tns:AddXMLWithParameters2SoapIn" />
+      <wsdl:output message="tns:AddXMLWithParameters2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSON">
+      <wsdl:input message="tns:AddWithJSONSoapIn" />
+      <wsdl:output message="tns:AddWithJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSONWithParameters">
+      <wsdl:input message="tns:AddWithJSONWithParametersSoapIn" />
+      <wsdl:output message="tns:AddWithJSONWithParametersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculateSoap" type="tns:CalculateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXML">
+      <soap:operation soapAction="http://tempuri.org/AddXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters">
+      <soap:operation soapAction="http://tempuri.org/AddXMLWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters2">
+      <soap:operation soapAction="http://tempuri.org/AddXMLWithParameters2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSON">
+      <soap:operation soapAction="http://tempuri.org/AddWithJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSONWithParameters">
+      <soap:operation soapAction="http://tempuri.org/AddWithJSONWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculateSoap12" type="tns:CalculateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXML">
+      <soap12:operation soapAction="http://tempuri.org/AddXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters">
+      <soap12:operation soapAction="http://tempuri.org/AddXMLWithParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddXMLWithParameters2">
+      <soap12:operation soapAction="http://tempuri.org/AddXMLWithParameters2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSON">
+      <soap12:operation soapAction="http://tempuri.org/AddWithJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWithJSONWithParameters">
+      <soap12:operation soapAction="http://tempuri.org/AddWithJSONWithParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculate">
+    <wsdl:port name="CalculateSoap" binding="tns:CalculateSoap">
+      <soap:address location="http://localhost:49661/Calculate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculateSoap12" binding="tns:CalculateSoap12">
+      <soap12:address location="http://localhost:49661/Calculate.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
