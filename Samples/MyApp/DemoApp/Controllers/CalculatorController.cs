@@ -13,15 +13,22 @@ namespace DemoApp.Controllers
         {
             return View();
         }
+
+        [HttpGet]
         public ActionResult CalculateFromOtherApp()
         {
-            CalculateReference.CalculateSoapClient CalculateWebServiceObj = new CalculateReference.CalculateSoapClient();
-            //string Result = CalculateWebServiceObj.Add();error
-            int AddResult = CalculateWebServiceObj.Add();
-            int AddXMLResult = CalculateWebServiceObj.AddXML();
-            //int AddXMLWithParametersResult = CalculateWebServiceObj.AddXMLWithParameters();error
-            int AddXMLWithParametersResult = CalculateWebServiceObj.AddXMLWithParameters(123,123);
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult CalculateFromOtherApp(string x,string y)
+        {
+            int X = Convert.ToInt32(x);
+            int Y = Convert.ToInt32(y);
+            CalculateReference.CalculateSoapClient WebService = new CalculateReference.CalculateSoapClient();
+            //WebService.AddXMLWithParameters(x, y);error
+           
+            ViewBag.Result = WebService.AddXMLWithParameters(X, Y);
             return View();
         }
     }

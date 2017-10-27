@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "CalculateFromOtherApp";
+}
+
+<h2>CalculateFromOtherApp</h2>
+
+<form action="/Calculator/CalculateFromOtherApp" method="post">
+    <input type="text" name="x" placeholder="Enter first number" /><br /><br />
+    <input type="text" name="y" placeholder="Enter second number" /><br /><br />
+    <input type="submit" value="add" />
+</form>
+
+@if(ViewBag.Result != null)
+{
+    <h1>@ViewBag.Result</h1>
+}
+

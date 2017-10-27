@@ -53,12 +53,18 @@ service (client server ) from the application or server who owner of the web ser
 ..this class enable the client application to use the service
 or invoke the method in the ownr server
 .. we can create object of this class in client app  
-
-  ---------------------                ---------------
+- PROXY CLASS:
+  - call the methods in web services
+  - PROXY CLASS generate  SOAP request message and web servises generate SOAP response message
+  - it is responsable for serialztion and Deserialztion from and to .net objects
+   ---------------------                ---------------
    client application                   owner service application
    with                   ----------->  with 
    proxy class                          web services .asmx   
    ---------------------               ------------------
 
-
+#####################################
+what is the WSDL ?
+-----------
+https://www.youtube.com/watch?v=ycKnYOlQDEE&t=391s
 
