@@ -87,6 +87,36 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AddWithSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="y" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWithSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddWithSessionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAddOperations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAddOperationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAddOperationsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -131,6 +161,18 @@
   <wsdl:message name="AddWithJSONWithParametersSoapOut">
     <wsdl:part name="parameters" element="tns:AddWithJSONWithParametersResponse" />
   </wsdl:message>
+  <wsdl:message name="AddWithSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddWithSession" />
+  </wsdl:message>
+  <wsdl:message name="AddWithSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddWithSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAddOperationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAddOperations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAddOperationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAddOperationsResponse" />
+  </wsdl:message>
   <wsdl:portType name="CalculateSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -159,6 +201,14 @@
     <wsdl:operation name="AddWithJSONWithParameters">
       <wsdl:input message="tns:AddWithJSONWithParametersSoapIn" />
       <wsdl:output message="tns:AddWithJSONWithParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWithSession">
+      <wsdl:input message="tns:AddWithSessionSoapIn" />
+      <wsdl:output message="tns:AddWithSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAddOperations">
+      <wsdl:input message="tns:GetAllAddOperationsSoapIn" />
+      <wsdl:output message="tns:GetAllAddOperationsSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="CalculateSoap" type="tns:CalculateSoap">
@@ -226,6 +276,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddWithSession">
+      <soap:operation soapAction="http://tempuri.org/AddWithSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAddOperations">
+      <soap:operation soapAction="http://tempuri.org/GetAllAddOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="CalculateSoap12" type="tns:CalculateSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -285,6 +353,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddWithJSONWithParameters">
       <soap12:operation soapAction="http://tempuri.org/AddWithJSONWithParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWithSession">
+      <soap12:operation soapAction="http://tempuri.org/AddWithSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAddOperations">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAddOperations" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -9,7 +9,16 @@
 //------------------------------------------------------------------------------
 
 namespace DemoApp.CalculateReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CalculateReference.CalculateSoap")]
@@ -57,6 +66,19 @@ namespace DemoApp.CalculateReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithJSONWithParameters", ReplyAction="*")]
         System.Threading.Tasks.Task<int> AddWithJSONWithParametersAsync(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithSession", ReplyAction="*")]
+        int AddWithSession(int x, int y);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithSession", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> AddWithSessionAsync(int x, int y);
+        
+        // CODEGEN: Generating message contract since element name GetAllAddOperationsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAddOperations", ReplyAction="*")]
+        DemoApp.CalculateReference.GetAllAddOperationsResponse GetAllAddOperations(DemoApp.CalculateReference.GetAllAddOperationsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAddOperations", ReplyAction="*")]
+        System.Threading.Tasks.Task<DemoApp.CalculateReference.GetAllAddOperationsResponse> GetAllAddOperationsAsync(DemoApp.CalculateReference.GetAllAddOperationsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -117,6 +139,67 @@ namespace DemoApp.CalculateReference {
         
         public HelloWorldResponseBody(string HelloWorldResult) {
             this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllAddOperationsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllAddOperations", Namespace="http://tempuri.org/", Order=0)]
+        public DemoApp.CalculateReference.GetAllAddOperationsRequestBody Body;
+        
+        public GetAllAddOperationsRequest() {
+        }
+        
+        public GetAllAddOperationsRequest(DemoApp.CalculateReference.GetAllAddOperationsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllAddOperationsRequestBody {
+        
+        public GetAllAddOperationsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllAddOperationsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllAddOperationsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public DemoApp.CalculateReference.GetAllAddOperationsResponseBody Body;
+        
+        public GetAllAddOperationsResponse() {
+        }
+        
+        public GetAllAddOperationsResponse(DemoApp.CalculateReference.GetAllAddOperationsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllAddOperationsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public DemoApp.CalculateReference.ArrayOfString GetAllAddOperationsResult;
+        
+        public GetAllAddOperationsResponseBody() {
+        }
+        
+        public GetAllAddOperationsResponseBody(DemoApp.CalculateReference.ArrayOfString GetAllAddOperationsResult) {
+            this.GetAllAddOperationsResult = GetAllAddOperationsResult;
         }
     }
     
@@ -216,6 +299,37 @@ namespace DemoApp.CalculateReference {
         
         public System.Threading.Tasks.Task<int> AddWithJSONWithParametersAsync(int x, int y) {
             return base.Channel.AddWithJSONWithParametersAsync(x, y);
+        }
+        
+        public int AddWithSession(int x, int y) {
+            return base.Channel.AddWithSession(x, y);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddWithSessionAsync(int x, int y) {
+            return base.Channel.AddWithSessionAsync(x, y);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        DemoApp.CalculateReference.GetAllAddOperationsResponse DemoApp.CalculateReference.CalculateSoap.GetAllAddOperations(DemoApp.CalculateReference.GetAllAddOperationsRequest request) {
+            return base.Channel.GetAllAddOperations(request);
+        }
+        
+        public DemoApp.CalculateReference.ArrayOfString GetAllAddOperations() {
+            DemoApp.CalculateReference.GetAllAddOperationsRequest inValue = new DemoApp.CalculateReference.GetAllAddOperationsRequest();
+            inValue.Body = new DemoApp.CalculateReference.GetAllAddOperationsRequestBody();
+            DemoApp.CalculateReference.GetAllAddOperationsResponse retVal = ((DemoApp.CalculateReference.CalculateSoap)(this)).GetAllAddOperations(inValue);
+            return retVal.Body.GetAllAddOperationsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<DemoApp.CalculateReference.GetAllAddOperationsResponse> DemoApp.CalculateReference.CalculateSoap.GetAllAddOperationsAsync(DemoApp.CalculateReference.GetAllAddOperationsRequest request) {
+            return base.Channel.GetAllAddOperationsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<DemoApp.CalculateReference.GetAllAddOperationsResponse> GetAllAddOperationsAsync() {
+            DemoApp.CalculateReference.GetAllAddOperationsRequest inValue = new DemoApp.CalculateReference.GetAllAddOperationsRequest();
+            inValue.Body = new DemoApp.CalculateReference.GetAllAddOperationsRequestBody();
+            return ((DemoApp.CalculateReference.CalculateSoap)(this)).GetAllAddOperationsAsync(inValue);
         }
     }
 }

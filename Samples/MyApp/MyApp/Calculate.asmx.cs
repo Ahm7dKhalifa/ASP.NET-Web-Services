@@ -75,5 +75,49 @@ namespace MyApp
             int Result = x + y;
             return Result;
         }
+        /*########################################
+         *  web service with session 
+         * ######################################*/
+        //web method for web service
+        [WebMethod(EnableSession = true)]
+        public int AddWithSession(int x, int y)
+        {  
+            //1. make the web service (add operation) 
+            int Result = x + y;
+            //2. add the result every time for the Calculations List
+            //2.1 define the list
+            List<string> Calculations;
+            if(Session["AllUserOperations"] == null)
+            {
+                Calculations = new List<string>();
+            }
+            else
+            {
+                Calculations = (List<string>)Session["AllUserOperations"];
+            }
+            //2.2 add the result with message for Calculations list
+            string Message = x.ToString() + " + " + y.ToString() + " = " + Result.ToString();
+            Calculations.Add(Message);
+            //3.define the session
+            Session["AllUserOperations"] = Calculations;
+            return Result;
+        }
+        //web method for get session service
+        [WebMethod(EnableSession = true)]
+        public List<string> GetAllAddOperations()
+        {
+          List<string> Calculations;
+          if (Session["AllUserOperations"] == null)
+          {
+                Calculations = new List<string>();
+                Calculations.Add("you do not perform any calculations");
+                return Calculations;
+          }
+          else
+          {
+                Calculations = (List<string>)Session["AllUserOperations"];
+                return Calculations;
+          }
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace DemoApp.Controllers
             int Y = Convert.ToInt32(y);
             CalculateReference.CalculateSoapClient WebService = new CalculateReference.CalculateSoapClient();
             //WebService.AddXMLWithParameters(x, y);error
-           
             ViewBag.Result = WebService.AddXMLWithParameters(X, Y);
             return View();
         }

@@ -1,6 +1,6 @@
 *******************************
 ******************************
-introduction 
+1.introduction 
 ***************************
 ****************************
 ##########################
@@ -34,7 +34,7 @@ web services namespace (id)
 https://www.youtube.com/watch?v=xzJm0lPIoJY
 *******************************
 ******************************
-Consuming a web service
+2.Consuming a web service
 ***************************
 ****************************
 ###############################
@@ -67,4 +67,24 @@ or invoke the method in the ownr server
 what is the WSDL ?
 -----------
 https://www.youtube.com/watch?v=ycKnYOlQDEE&t=391s
+*******************************
+******************************
+2.using session
+***************************
+****************************
+#####################################
+what is the condtion for uesing session?
+-----------
+www.youtube.com/watch?v=gq1Yt11brps
 
+#####################################
+what is useful for uesing session?
+-----------
+www.youtube.com/watch?v=gq1Yt11brps
+
+
+#####################################
+what is useful for update proxy class?
+-----------
+to add new methods which add to web service after bulid 
+proxy class
