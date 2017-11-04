@@ -8,6 +8,8 @@ namespace DemoApp.Controllers
 {
     public class CalculatorController : Controller
     {
+        //create object of proxy class
+        CalculateReference.CalculateSoapClient WebService = new CalculateReference.CalculateSoapClient();
         // GET: Calculator
         public ActionResult Index()
         {
@@ -25,9 +27,10 @@ namespace DemoApp.Controllers
         {
             int X = Convert.ToInt32(x);
             int Y = Convert.ToInt32(y);
-            CalculateReference.CalculateSoapClient WebService = new CalculateReference.CalculateSoapClient();
             //WebService.AddXMLWithParameters(x, y);error
-            ViewBag.Result = WebService.AddXMLWithParameters(X, Y);
+            ViewBag.Result = WebService.AddWithSession(X, Y);
+            List<string> PreviosOperationsList = WebService.GetAllAddOperations();
+            ViewBag.PreviosOperations = PreviosOperationsList;
             return View();
         }
     }

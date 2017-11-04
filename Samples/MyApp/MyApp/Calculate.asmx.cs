@@ -79,7 +79,7 @@ namespace MyApp
          *  web service with session 
          * ######################################*/
         //web method for web service
-        [WebMethod(EnableSession = true)]
+        [WebMethod(EnableSession = true, Description = "THIS Method To Add two numbers , and store all the operations we perform using web services ", CacheDuration = 20, MessageName = "AddTwoNumber")]
         public int AddWithSession(int x, int y)
         {  
             //1. make the web service (add operation) 

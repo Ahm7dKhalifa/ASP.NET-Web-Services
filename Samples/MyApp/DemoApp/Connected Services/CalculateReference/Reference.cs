@@ -67,11 +67,12 @@ namespace DemoApp.CalculateReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithJSONWithParameters", ReplyAction="*")]
         System.Threading.Tasks.Task<int> AddWithJSONWithParametersAsync(int x, int y);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithSession", ReplyAction="*")]
-        int AddWithSession(int x, int y);
+        // CODEGEN: Generating message contract since the wrapper name (AddTwoNumber) of message AddTwoNumber does not match the default value (AddWithSession)
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddTwoNumber", ReplyAction="*")]
+        DemoApp.CalculateReference.AddTwoNumber1 AddWithSession(DemoApp.CalculateReference.AddTwoNumber request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddWithSession", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> AddWithSessionAsync(int x, int y);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddTwoNumber", ReplyAction="*")]
+        System.Threading.Tasks.Task<DemoApp.CalculateReference.AddTwoNumber1> AddWithSessionAsync(DemoApp.CalculateReference.AddTwoNumber request);
         
         // CODEGEN: Generating message contract since element name GetAllAddOperationsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAddOperations", ReplyAction="*")]
@@ -139,6 +140,44 @@ namespace DemoApp.CalculateReference {
         
         public HelloWorldResponseBody(string HelloWorldResult) {
             this.HelloWorldResult = HelloWorldResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddTwoNumber", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class AddTwoNumber {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int x;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int y;
+        
+        public AddTwoNumber() {
+        }
+        
+        public AddTwoNumber(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AddTwoNumberResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class AddTwoNumber1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int AddTwoNumberResult;
+        
+        public AddTwoNumber1() {
+        }
+        
+        public AddTwoNumber1(int AddTwoNumberResult) {
+            this.AddTwoNumberResult = AddTwoNumberResult;
         }
     }
     
@@ -301,12 +340,29 @@ namespace DemoApp.CalculateReference {
             return base.Channel.AddWithJSONWithParametersAsync(x, y);
         }
         
-        public int AddWithSession(int x, int y) {
-            return base.Channel.AddWithSession(x, y);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        DemoApp.CalculateReference.AddTwoNumber1 DemoApp.CalculateReference.CalculateSoap.AddWithSession(DemoApp.CalculateReference.AddTwoNumber request) {
+            return base.Channel.AddWithSession(request);
         }
         
-        public System.Threading.Tasks.Task<int> AddWithSessionAsync(int x, int y) {
-            return base.Channel.AddWithSessionAsync(x, y);
+        public int AddWithSession(int x, int y) {
+            DemoApp.CalculateReference.AddTwoNumber inValue = new DemoApp.CalculateReference.AddTwoNumber();
+            inValue.x = x;
+            inValue.y = y;
+            DemoApp.CalculateReference.AddTwoNumber1 retVal = ((DemoApp.CalculateReference.CalculateSoap)(this)).AddWithSession(inValue);
+            return retVal.AddTwoNumberResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<DemoApp.CalculateReference.AddTwoNumber1> DemoApp.CalculateReference.CalculateSoap.AddWithSessionAsync(DemoApp.CalculateReference.AddTwoNumber request) {
+            return base.Channel.AddWithSessionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<DemoApp.CalculateReference.AddTwoNumber1> AddWithSessionAsync(int x, int y) {
+            DemoApp.CalculateReference.AddTwoNumber inValue = new DemoApp.CalculateReference.AddTwoNumber();
+            inValue.x = x;
+            inValue.y = y;
+            return ((DemoApp.CalculateReference.CalculateSoap)(this)).AddWithSessionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

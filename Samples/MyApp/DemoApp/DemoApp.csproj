@@ -168,6 +168,9 @@
     <Content Include="Connected Services\CalculateReference\DemoApp.CalculateReference.GetAllAddOperationsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\CalculateReference\DemoApp.CalculateReference.AddTwoNumber1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\CalculateReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

@@ -69,18 +69,30 @@ what is the WSDL ?
 https://www.youtube.com/watch?v=ycKnYOlQDEE&t=391s
 *******************************
 ******************************
-2.using session
+3.using session
 ***************************
 ****************************
 #####################################
-what is the condtion for uesing session?
+what is the condtion for using session?
 -----------
-www.youtube.com/watch?v=gq1Yt11brps
-
+1. www.youtube.com/watch?v=gq1Yt11brps 
+  [ ENABLESESSION IN WEB METHOD IN OWNER APPLICATION ]
+2.[ALLOW COOKIE IN CLIENT APPLICATION ]
 #####################################
 what is useful for uesing session?
 -----------
 www.youtube.com/watch?v=gq1Yt11brps
+*******************************
+******************************
+4.web Method Properties
+***************************
+****************************
+##########################
+what is the commen web Method Properties ? 
+and what is the using of them ?
+------------
+https://www.youtube.com/watch?v=lyse8HFVTcM&list=PL6n9fhu94yhW6VEqiXQvS2bLb5KaLTo7c&index=4
+https://www.youtube.com/watch?v=EkCvoHg8OX8&index=5&list=PL6n9fhu94yhW6VEqiXQvS2bLb5KaLTo7c
 
 
 #####################################

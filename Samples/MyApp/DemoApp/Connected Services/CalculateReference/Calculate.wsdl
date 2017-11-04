@@ -87,7 +87,7 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="AddWithSession">
+      <s:element name="AddTwoNumber">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
@@ -95,10 +95,10 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="AddWithSessionResponse">
+      <s:element name="AddTwoNumberResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AddWithSessionResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddTwoNumberResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -161,11 +161,11 @@
   <wsdl:message name="AddWithJSONWithParametersSoapOut">
     <wsdl:part name="parameters" element="tns:AddWithJSONWithParametersResponse" />
   </wsdl:message>
-  <wsdl:message name="AddWithSessionSoapIn">
-    <wsdl:part name="parameters" element="tns:AddWithSession" />
+  <wsdl:message name="AddTwoNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTwoNumber" />
   </wsdl:message>
-  <wsdl:message name="AddWithSessionSoapOut">
-    <wsdl:part name="parameters" element="tns:AddWithSessionResponse" />
+  <wsdl:message name="AddTwoNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTwoNumberResponse" />
   </wsdl:message>
   <wsdl:message name="GetAllAddOperationsSoapIn">
     <wsdl:part name="parameters" element="tns:GetAllAddOperations" />
@@ -203,8 +203,9 @@
       <wsdl:output message="tns:AddWithJSONWithParametersSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="AddWithSession">
-      <wsdl:input message="tns:AddWithSessionSoapIn" />
-      <wsdl:output message="tns:AddWithSessionSoapOut" />
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">THIS Method To Add two numbers , and store all the operations we perform using web services </wsdl:documentation>
+      <wsdl:input name="AddTwoNumber" message="tns:AddTwoNumberSoapIn" />
+      <wsdl:output name="AddTwoNumber" message="tns:AddTwoNumberSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAllAddOperations">
       <wsdl:input message="tns:GetAllAddOperationsSoapIn" />
@@ -277,11 +278,11 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddWithSession">
-      <soap:operation soapAction="http://tempuri.org/AddWithSession" style="document" />
-      <wsdl:input>
+      <soap:operation soapAction="http://tempuri.org/AddTwoNumber" style="document" />
+      <wsdl:input name="AddTwoNumber">
         <soap:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
+      <wsdl:output name="AddTwoNumber">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -361,11 +362,11 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AddWithSession">
-      <soap12:operation soapAction="http://tempuri.org/AddWithSession" style="document" />
-      <wsdl:input>
+      <soap12:operation soapAction="http://tempuri.org/AddTwoNumber" style="document" />
+      <wsdl:input name="AddTwoNumber">
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
+      <wsdl:output name="AddTwoNumber">
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
