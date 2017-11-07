@@ -64,6 +64,11 @@ or invoke the method in the ownr server
    ---------------------               ------------------
 
 #####################################
+what is useful for update proxy class?
+-----------
+to add new methods which add to web service after bulid 
+proxy class
+#####################################
 what is the WSDL ?
 -----------
 https://www.youtube.com/watch?v=ycKnYOlQDEE&t=391s
@@ -94,9 +99,15 @@ and what is the using of them ?
 https://www.youtube.com/watch?v=lyse8HFVTcM&list=PL6n9fhu94yhW6VEqiXQvS2bLb5KaLTo7c&index=4
 https://www.youtube.com/watch?v=EkCvoHg8OX8&index=5&list=PL6n9fhu94yhW6VEqiXQvS2bLb5KaLTo7c
 
+***********************************
+**********************************
+**********************************
+5.using ajax
+***********************************
+**********************************
+**********************************
+###########################
+what is required to using ajax
+----------
+https://www.youtube.com/watch?v=-xMGwiV5A6o&list=PL6n9fhu94yhW6VEqiXQvS2bLb5KaLTo7c&index=6
 
-#####################################
-what is useful for update proxy class?
------------
-to add new methods which add to web service after bulid 
-proxy class

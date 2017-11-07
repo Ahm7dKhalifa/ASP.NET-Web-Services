@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CalculateFromOtherApp_WithAjax";
+}
+
+<h2>CalculateFromOtherApp_WithAjax</h2>
+
+@using (Ajax.BeginForm("Calculate_WithAjax", "Calculator", new AjaxOptions() { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "ajaxResult" }))
+{
+    <input type="text" name="x" placeholder="Enter first number" /><br /><br />
+    <input type="text" name="y" placeholder="Enter second number" /><br /><br />
+    <input type="submit" value="add" />
+}
+<div id="ajaxResult">
+    @if (ViewBag.Result != null)
+    {
+        <h1>@ViewBag.Result</h1>
+        }
+    @if (ViewBag.PreviosOperations != null)
+    {
+        <h1> Previos Operations :</h1>
+        foreach (var item in ViewBag.PreviosOperations)
+        {
+            <h2>@item</h2>
+        }
+    }
+</div>

@@ -1,0 +1,12 @@
+﻿@if (ViewBag.Result != null)
+{
+    <h1>@ViewBag.Result</h1>
+}
+@if (ViewBag.PreviosOperations != null)
+{
+    <h1> Previos Operations :</h1>
+    foreach (var item in ViewBag.PreviosOperations)
+    {
+        <h2>@item</h2>
+    }
+}

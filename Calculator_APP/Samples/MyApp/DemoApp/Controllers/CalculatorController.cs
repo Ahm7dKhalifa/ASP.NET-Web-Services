@@ -33,5 +33,24 @@ namespace DemoApp.Controllers
             ViewBag.PreviosOperations = PreviosOperationsList;
             return View();
         }
+
+        [HttpGet]
+        public ActionResult CalculateFromOtherApp_WithAjax()
+        {
+            return View();
+        }
+
+        
+        public PartialViewResult Calculate_WithAjax(string x, string y)
+        {
+            int X = Convert.ToInt32(x);
+            int Y = Convert.ToInt32(y);
+            //WebService.AddXMLWithParameters(x, y);error
+            ViewBag.Result = WebService.AddWithSession(X, Y);
+            List<string> PreviosOperationsList = WebService.GetAllAddOperations();
+            ViewBag.PreviosOperations = PreviosOperationsList;
+            return PartialView("Calculate_WithAjax");
+        }
+
     }
 }
